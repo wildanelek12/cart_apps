@@ -31,31 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13)));
   }
 
-  Widget _categoryWidget() {
-    return Container(
 
-      width: AppTheme.fullWidth(context),
-      height: 80,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: AppData.categoryList
-            .map(
-              (category) => ProductIcon(
-                model: category,
-                onSelected: (model) {
-                  setState(() {
-                    AppData.categoryList.forEach((item) {
-                      item.isSelected = false;
-                    });
-                    model.isSelected = true;
-                  });
-                },
-              ),
-            )
-            .toList(),
-      ),
-    );
-  }
 
   Widget _productWidget() {
     return Container(
